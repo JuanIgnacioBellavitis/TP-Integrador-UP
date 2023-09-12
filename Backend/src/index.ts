@@ -1,11 +1,12 @@
 import "dotenv/config";
 import express from 'express';
-import personajeRouter from './routes/personajes';
 import cors from "cors";
 import mongoose from "mongoose";
 import router from "./routes";
+import cookieParser from "cookie-parser";
 
 const app = express();
+app.use(cookieParser());
 
 app.use(express.json());
 app.use(cors({
@@ -18,8 +19,6 @@ app.get('/ping', ( _req, res) => {
     console.log("PINGED");
     res.send("PONG")
 });
-
-app.use('/api/personajes', personajeRouter);
 
 app.listen(PORT, () => {
     console.log(`SERVIDOR EN PUERTO ${PORT}`)
