@@ -14,6 +14,7 @@ USUARIO:
 
 PERSONAJES:
 
+/defaultCharacters --> Obtiene todos los personajes elegibles para el usuario.
 /characters --> Obtiene todos los personajes creados por el usuario logueado
 /characterById --> Obtiene los datos de un personaje en concreto.
 /characters/create --> Se utiliza para crear el personaje con Cabeza, parte superior, inferior y zapatos elegidos por el usuario.

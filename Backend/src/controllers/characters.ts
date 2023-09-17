@@ -1,5 +1,17 @@
 import {Request, Response} from 'express';
 import { createCharacter, getCharacterById, getCharacterByUserId } from '../db/personajes';
+import { getDefaultCharacters } from '../db/defaultCharacters';
+
+export const getAllDefaultCharacters = async (_req: Request, res: Response) => {
+    try {
+        const defaultCharacters = await getDefaultCharacters();
+        
+        return res.status(200).json(defaultCharacters).end();
+    } catch (error) {
+        console.log(error);
+        return res.sendStatus(400);
+    }
+}
 
 export const getAllCharactersFromUserId = async (req: Request, res: Response) => {
     try {
