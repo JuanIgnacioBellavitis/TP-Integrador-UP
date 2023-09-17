@@ -1,0 +1,20 @@
+Trabajo Practico Integrador - FULL STACK WEB DEVELOPMENT
+
+Backend realizado con Typescript, NodeJs, express y MongoDB
+
+Endpoints:
+
+AUTENTIFICACIÓN:
+
+/auth/login --> Autentificiación del usuario, ingresando nombre de usuario y contraseña.
+
+USUARIO: 
+
+/user -->  obtiene el ID y Nombre del usuario logueado.
+
+PERSONAJES:
+
+/characters --> Obtiene todos los personajes creados por el usuario logueado
+/characterById --> Obtiene los datos de un personaje en concreto.
+/characters/create --> Se utiliza para crear el personaje con Cabeza, parte superior, inferior y zapatos elegidos por el usuario.
+/character/:id --> Se utiliza para hacer una modificacion del personaje.
