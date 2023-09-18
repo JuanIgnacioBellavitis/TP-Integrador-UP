@@ -2,6 +2,12 @@ Trabajo Practico Integrador - FULL STACK WEB DEVELOPMENT
 
 Backend realizado con Typescript, NodeJs, express y MongoDB
 
+Una vez instalado el proyecto, deberá realizar el siguiente comando para instalar todos los paquetes:
+
+npm install
+o
+yarn install
+
 Endpoints:
 
 AUTENTIFICACIÓN:
