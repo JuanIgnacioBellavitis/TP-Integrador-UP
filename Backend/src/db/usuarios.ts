@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
         salt: { type: String, select: false },
         sessionToken: { type: String, select: false},
     },
-
 });
 
 export const UserModel = mongoose.model('User', userSchema);

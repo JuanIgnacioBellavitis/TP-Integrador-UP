@@ -3,8 +3,8 @@ import { CreateCharacter, GetCharacterById, UpdateCharacter, getAllDefaultCharac
 
 export default (router: express.Router) => {
     router.get('/defaultCharacters', getAllDefaultCharacters)
-    router.get('/characters', getAllCharactersFromUserId);
-    router.get('/characterById', GetCharacterById);
+    router.get('/charactersFromUserId/:userId', getAllCharactersFromUserId);
+    router.get('/characterById/:id', GetCharacterById);
     router.post('/characters/create', CreateCharacter);
     router.post('/character/:id', UpdateCharacter)
 }

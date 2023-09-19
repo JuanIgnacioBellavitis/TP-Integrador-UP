@@ -15,7 +15,7 @@ export const getAllDefaultCharacters = async (_req: Request, res: Response) => {
 
 export const getAllCharactersFromUserId = async (req: Request, res: Response) => {
     try {
-        const { userId } = req.body;
+        const { userId } = req.params;
 
         const characters = await getCharacterByUserId(userId);                
 
@@ -24,7 +24,6 @@ export const getAllCharactersFromUserId = async (req: Request, res: Response) =>
         }        
 
         return res.status(200).json(characters);
-
     } catch (error) {
         console.log(error);
         return res.sendStatus(400);
@@ -53,16 +52,15 @@ export const CreateCharacter = async (req: Request, res: Response) => {
 
 export const GetCharacterById = async (req: Request, res: Response) => {
     try {
-        const { _id } = req.body;
-
-        const character = await getCharacterById(_id);
-
-        if (!character) {
+        const { id } = req.params;
+        
+        const character = await getCharacterById(id);
+        
+        if (!character) {            
             return res.sendStatus(403);
         }
 
         return res.status(200).json(character);
-
     } catch (error) {
         console.log(error);
         return res.sendStatus(400);
