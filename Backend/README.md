@@ -36,7 +36,7 @@ Descripción: Método POST. Autentificiación del usuario, ingresando nombre de 
 
 ```/user/:id```
 
-Descripción: Método GET. obtiene el ID y Nombre del usuario logueado.
+Descripción: Método GET. Se envía el ID por parametro y se obtiene el ID y Nombre del usuario logueado.
 
 #### PERSONAJES:
 
