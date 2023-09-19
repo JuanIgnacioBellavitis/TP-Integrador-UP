@@ -44,23 +44,13 @@ Descripción: Método GET. Se envía el ID por parametro y se obtiene el ID y No
 
 Descripción: Método GET. No necesita Body. Obtiene todos los personajes hechos por defecto, su ID, nombre y la cabeza del personaje.
 
-```/characters```
-```
-{
-    "userId": "64f4ff936f2badff5b3b61de"
-}
-```
+```/charactersFromUserId/:userId```
 
-Descripción: Método GET. Obtiene todos los personajes creados por el usuario logueado
+Descripción: Método GET. Se envia el ID del usuario y se obtiene todos los personajes creados por el usuario logueado
 
-```/characterById ```
-```
-{
-    "_id": "6508cda7456a80ef86b72790"
-}
-```
+```/characterById/:id ```
 
-Descripción: Método GET. Obtiene los datos de un personaje en concreto.
+Descripción: Método GET. Se envia el ID del personaje y se obtiene los datos de un personaje en concreto.
 
 ```/characters/create ```
 
@@ -77,7 +67,7 @@ Descripción: Método GET. Obtiene los datos de un personaje en concreto.
 
 Descripción: Método POST. Se utiliza para crear el personaje con parte superior, inferior y zapatos elegidos por el usuario.
 
-```/character/:id ```
+```/character/update/:id ```
 ```
 {
     "userId": "64f4fff27c1e572c517f8eae",
