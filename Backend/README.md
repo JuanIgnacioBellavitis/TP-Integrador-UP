@@ -29,17 +29,12 @@ Endpoints y bodys para el correcto funcionamiento:
     "password":  "1234"
 }
 ```
+
 Descripción: Método POST. Autentificiación del usuario, ingresando nombre de usuario y contraseña.
 
 #### USUARIO: 
 
-```/user```
-
-```
-{
-    "username": "USUARIO 1"
-}
-```
+```/user/:id```
 
 Descripción: Método GET. obtiene el ID y Nombre del usuario logueado.
 
