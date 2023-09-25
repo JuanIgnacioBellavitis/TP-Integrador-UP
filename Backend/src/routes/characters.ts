@@ -6,5 +6,5 @@ export default (router: express.Router) => {
     router.get('/charactersFromUserId/:userId', getAllCharactersFromUserId);
     router.get('/characterById/:id', GetCharacterById);
     router.post('/characters/create', CreateCharacter);
-    router.post('/character/:id', UpdateCharacter)
+    router.post('/character/update/:id', UpdateCharacter)
 }
