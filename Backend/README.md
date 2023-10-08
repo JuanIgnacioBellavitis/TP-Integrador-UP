@@ -15,9 +15,12 @@ Backend realizado con Typescript, NodeJs, express y MongoDB.
 ### Instalación y Ejecución
 Descargue el zip y abra el proyecto en Visual Studio Code.
 
-Antes de empezar a ejecutar el programa, ejecute ```npm install``` o ```yarn install``` en la consola en el directorio del proyecto para instalar las dependencias del package.json
+Antes de empezar a ejecutar el programa, ejecute ```npm install``` o ```yarn install``` en la consola en el directorio del proyecto para instalar las dependencias del package.json.
 
-Endpoints y bodys para el correcto funcionamiento:
+Una vez finalizado la instalación de los paquetes, ejecutar ```npm start``` para iniciar el servidor.
+
+Por último, abrir Postman y consumir la API, apuntando a ```http://localhost:3000``` seguido de los siguientes endpoints y bodys para el correcto funcionamiento:
+
 
 #### AUTENTIFICACIÓN:
 
