@@ -2,6 +2,7 @@ import { Endpoints } from "../config/endpoints";
 import { API_URL } from "../config/general-config";
 import { apiPost } from "../shared/apiService";
 import { UserData } from "../shared/types";
+import { Paths } from "../config/paths";
 
 const UserLogin = async (userLogin: UserData) => {
     const response = await apiPost({
@@ -11,6 +12,8 @@ const UserLogin = async (userLogin: UserData) => {
 
     const username = response.username;
     const userID = response._id;
+    
+    localStorage.setItem("usertoken", response.authentication.sessionToken);
 
     return {
         username,
@@ -18,13 +21,23 @@ const UserLogin = async (userLogin: UserData) => {
     };
 };
 
+const isLoggedIn = () => {
+    const token = localStorage.getItem('usertoken');
+
+    return token;
+}
+
 const logout = async (reload = true) => {
+
     localStorage.removeItem('userID');
     localStorage.removeItem('username');
-    reload && window.location.reload();
+    localStorage.removeItem('usertoken');
+
+    reload && window.location.assign(Paths.LOGIN);
 }
 
 export {
     UserLogin,
-    logout
+    logout,
+    isLoggedIn
 }

@@ -1,0 +1,31 @@
+.character-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Hasta 5 columnas por fila */
+    grid-gap: 20px; /* Espacio entre los personajes */
+    list-style: none;
+    padding: 0;
+  }
+  
+  .character-item {
+    padding: 10px; /* Espacio alrededor de los personajes */
+    box-sizing: border-box; /* Para incluir el padding en el ancho total */
+  }
+  
+  .character-details {
+    text-align: center;
+    margin: 10px; /* Espacio alrededor de los detalles del personaje */
+  }
+  
+  .clothing-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Cada imagen en su propia fila */
+    grid-gap: 10px; /* Espacio entre las imágenes de ropa */
+    border: 2px solid white;
+    height: 700px;
+  }
+  
+  .clothing-grid img {
+    display: block;
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+  }
+  

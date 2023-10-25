@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Formik, Form } from "formik";
 import { UserLogin } from "../../auth/AuthService";
 import * as Yup from 'yup';
@@ -6,12 +5,16 @@ import { TextInput } from "../TextInput";
 import { useNavigate } from 'react-router-dom';
 import { Paths } from '../../config/paths';
 import './styles.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 export const LoginComponent = () => {
-  const [error, setError] = useState('');
   const navigate = useNavigate();
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <div>
         <Formik
           initialValues={{ username: '', password: '' }}
@@ -25,15 +28,20 @@ export const LoginComponent = () => {
           }
           onSubmit={async (values: any) => {
             try {
-              const user = await UserLogin(values);
-              console.log(user)
+              const user = await  toast.promise(UserLogin(values),    {
+                loading: 'Ingresando...',
+                success: <b>Usuario logueado correctamente!</b>,
+                error: <b>Hubo un error. Verifique sus credenciales</b>,
+              });
+              
               localStorage.setItem('userID', user.userID);
               localStorage.setItem('username', user.username);
-              
 
-              navigate(`${Paths.HOME}`);
+              setTimeout(() => {
+                navigate(`${Paths.HOME}`);
+              }, 2000);
             } catch (error: any) {
-              setError('Acceso no autorizado. Por favor, verifique sus credenciales.')
+              console.log("Error: ", error)
             }
           }}
      >
@@ -48,7 +56,6 @@ export const LoginComponent = () => {
 
                   <button type="submit">Ingresar</button>
                 </Form>
-                {error && <span>{error}</span>}
                 </>
 
               )

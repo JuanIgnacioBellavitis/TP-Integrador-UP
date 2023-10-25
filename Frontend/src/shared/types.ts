@@ -4,6 +4,7 @@ export interface BaseApiParams {
     showSuccessMsg?: boolean
 }
 
+export interface GetParams extends BaseApiParams {}
 
 export interface PostParams extends BaseApiParams {
     body: any,
@@ -13,4 +14,14 @@ export interface PostParams extends BaseApiParams {
 export interface UserData {
     username: string,
     password: string
+};
+
+export interface CharactersProps {
+    _id: string,
+    userId: string,
+    headId: number,
+    tshirtId: number,
+    pantsId: number,
+    shoesId: number,
+    characterName: string,
 }

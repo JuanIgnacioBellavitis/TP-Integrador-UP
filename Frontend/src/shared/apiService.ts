@@ -1,11 +1,28 @@
-import { BaseApiParams, PostParams } from "./types";
+import { BaseApiParams, GetParams, PostParams } from "./types";
 
-const getHeaders = () => {
+export const getHeaders = () => {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
-    headers.append("Prefer", `return=representation`);
+    headers.append("Prefer", `return=representations`);
     headers.append("Access-Control-Allow-Origin", "http://localhost:5173/");
     return headers;
+}
+
+const apiGet = async (params: GetParams) => {
+    try {
+        const { url } = params;
+        console.log("url", url)
+        const response = await fetch(url, {
+            method: "GET",
+            headers: getHeaders(),
+        });
+        return processJsonResponse(params, response, {
+            method: "GET",
+            url: url,
+        });
+    } catch(error) {
+        console.log("Error Get: ", error)
+    }
 }
 
 const apiPost = async (params: PostParams) => {
@@ -16,7 +33,7 @@ const apiPost = async (params: PostParams) => {
         headers: getHeaders(),
     });
 
-    return processJsonResponse(params, response, {
+    return processJsonResponse(params, response,  {
         method: "POST",
         body: params.body,
         url: url
@@ -88,5 +105,6 @@ const getErrorFromServiceResponse = async (response: any) => {
 }
 
 export {
+    apiGet,
     apiPost
 }

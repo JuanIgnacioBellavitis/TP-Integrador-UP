@@ -1,4 +1,5 @@
 export enum Paths {
-    LOGIN = "/",
+    LOGIN = "http://localhost:5173/",
     HOME = "/home",
+    CHARACTER = "/character"
 }
