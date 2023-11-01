@@ -43,6 +43,10 @@ Descripción: Método GET. Se envía el ID por parametro y se obtiene el ID y No
 
 #### PERSONAJES:
 
+```/characters```
+
+Descripción: Método GET. Obtiene todos los personajes creados.
+
 ```/defaultCharacters```
 
 Descripción: Método GET. No necesita Body. Obtiene todos los personajes hechos por defecto, su ID, nombre y la cabeza del personaje.
