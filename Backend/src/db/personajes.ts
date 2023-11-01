@@ -11,6 +11,7 @@ const characterSchema = new mongoose.Schema({
 
 export const CharacterModel = mongoose.model("Character", characterSchema);
 
+export const getCharacters = () => CharacterModel.find();
 export const getCharacterByUserId = (userId: string) => CharacterModel.find({userId});
 export const createCharacter = (values: Record<string, any>) => new CharacterModel(values).save().then((character) => character.toObject());
 export const getCharacterById = (id: string) => CharacterModel.findById(id);
