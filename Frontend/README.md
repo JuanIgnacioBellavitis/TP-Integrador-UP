@@ -15,7 +15,7 @@ Descargue el zip o ejecute ```git clone {url del proyecto}``` sobre el directori
 
 Antes de empezar a ejecutar el programa, ejecute ```npm install``` o ```yarn install``` en la consola en el directorio del proyecto para instalar las dependencias del package.json.
 
-Una vez finalizado la instalación de los paquetes, ejecutar ```npm run dev``` para iniciar el servidor.
+Una vez finalizado la instalación de los paquetes, ejecutar ```npm run dev``` para iniciar la aplicación frontend, pero para consumir la api, tambien hay que ejecutar el Backend (leer la documentación de Backend).
 
 Por último, abra su navegador de preferencia y escriba en la url ```http://localhost:5173```.
 
