@@ -11,8 +11,7 @@ import { CharactersProps } from "../../shared/types";
 import { apiGet } from "../../shared/apiService";
 import { Endpoints } from "../../config/endpoints";
 import { API_URL } from "../../config/general-config";
-import { Grid } from "@mui/material";
-import { ClothingMap } from "../../defaults/Characters";
+import { ListCharacters } from "../ListCharacters";
 
 export const LoginComponent = () => {
   const [characters, setCharacters] = useState<CharactersProps[]>();
@@ -44,7 +43,7 @@ export const LoginComponent = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          margin: "auto",
+          margin: "auto auto -9rem auto",
         }}
       >
         <Formik
@@ -81,7 +80,8 @@ export const LoginComponent = () => {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    marginTop: "10rem",
+                    marginTop: "5rem",
+                    marginBottom: "15rem",
                   }}
                 >
                   <h1>Iniciar Sesión</h1>
@@ -108,83 +108,10 @@ export const LoginComponent = () => {
           }}
         </Formik>
       </div>
-      <div
-        style={{
-          width: "90%",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          margin: "auto",
-        }}
-      >
-        {characters && characters.length > 0 ? (
-          <>
-            <div style={{ width: "100%", textAlign: "center" }}>
-              <h2>Últimos personajes creados!</h2>
-            </div>
-
-            <Grid
-              container
-              spacing={5}
-              style={{ display: "flex", justifyContent: "space-between" }}
-            >
-              {characters.map((character) => (
-                <Grid
-                  item
-                  xs={2}
-                  style={{
-                    margin: "2rem 0 0 0 ",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div style={{ width: "100%", textAlign: "center" }}>
-                    <h3>{character.characterName}</h3>
-                  </div>
-
-                  <div className="clothing-grid">
-                    <div style={{ height: "auto" }}>
-                      <img
-                        style={{
-                          width: "200px",
-                          position: "absolute",
-                          zIndex: "99999",
-                        }}
-                        src={ClothingMap.heads[character.headId]}
-                        alt="Head"
-                      />
-                    </div>
-                    <div style={{ height: "auto" }}>
-                      <img
-                        style={{ width: "200px", zIndex: "8888" }}
-                        src={ClothingMap.tshirts[character.tshirtId]}
-                        alt="T-shirt"
-                      />
-                    </div>
-                    <div style={{ height: "auto" }}>
-                      <img
-                        style={{ width: "200px", height: "200px" }}
-                        src={ClothingMap.pants[character.pantsId]}
-                        alt="Pants"
-                      />
-                    </div>
-                    <div style={{ height: "auto" }}>
-                      <img
-                        style={{ width: "150px", height: "100px" }}
-                        src={ClothingMap.shoes[character.shoesId]}
-                        alt="Shoes"
-                      />
-                    </div>
-                  </div>
-                </Grid>
-              ))}
-            </Grid>
-          </>
-        ) : (
-          <div>Todavia no se crearon personajes!</div>
-        )}
-      </div>
+      <ListCharacters
+        characters={characters}
+        title="Últimos personajes creados!"
+      />
     </>
   );
 };

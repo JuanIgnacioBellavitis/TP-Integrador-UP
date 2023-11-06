@@ -30,7 +30,7 @@ export const CarouselComponent = (props: CarouselProps) => {
         activeIndex={activeIndex}
         onSelect={handleSelect}
         data-bs-theme="dark"
-        slide={false}
+        interval={null}
         indicators={false}
         style={{ display: "flex", justifyContent: "center", width: "50%" }}
       >
